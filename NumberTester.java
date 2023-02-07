@@ -17,9 +17,6 @@ public class NumberTester
    {
       int n;
       int q;
-      boolean prime = true;
-      boolean even = true;
-      boolean repeat = true;
       
       String outputName;
       
@@ -35,28 +32,26 @@ public class NumberTester
          n = inputReader.nextInt();
          System.out.println(n);
       }
-      
-      
-      System.out.print("Name of the output file? (Probably numberSummary.txt): ");
-      outputName = keyboard.nextLine();
-      File outputFile = new File(outputName);
-      
-      PrintWriter outputWriter = new PrintWriter(outputFile);
-      
-      
-      
+                  
       /**
          isPrime takes an integer value (n) and returns true if
          the number is prime, false otherwise.
          @param n integer to be tested to determine if prime.
          @return boolean value if n is prime.
       */
-      /*
-      public static void isPrime(int n)
-      {
+
+   public static boolean isPrime(int n)
+   {
+      boolean status;
          
-      }
-      */
+      if (n > 0 && n % 2 == 0)
+         status = true;
+      else
+         status = false;
+            
+      return status;
+   }
+      
       
       /**
          isEven takes an integer value (n) and returns true if
@@ -65,9 +60,12 @@ public class NumberTester
          @return boolean value if n is even.
       */
       /*
-      public static void isEven(int n)
+      public static boolean isEven(int n)
       {
-         
+         if (n > 0 && n % 2 == 0)
+            return true;
+         else
+            return false;
       }
       */
       
@@ -79,12 +77,73 @@ public class NumberTester
          @return boolean value if n contains repeated values.
       */
       /*
-      public static void isRepeatedDigits(int n)
+      public static boolean isRepeatedDigits(int n)
       {
+         String s = " " + num 
+         Integer.toString()
          
+         for (i=0; i<s.length()-1; i++)
+            s.charAt(i)
       }
-      
       */
-      
    }
 }
+
+/*
+
+prime: n/2 
+output prints two seperate lines
+then prints the formatted ouput data
+
+577 - has repeating
+575 - does not have repeating
+
+take the number, convert to string, 
+each single digit a character,
+
+String s = "" + num 
+Integer.toString()
+
+s.charAt(i) - finds what character is at location
+
+loop through characters, stop if you find that the character at i
+and the character at i+1 is the same, or get to the end of the string
+
+when looping through values, 
+
+for (i=0; i<s.length()-1; i++)
+   s.charAt(i)
+
+//FORMATTING HEADER FOR OUTPUT:
+//figure out spacing
+
+   1[        Repeat
+   2[Number Digit Prime Even
+   3[477 +  -  -
+   4[ %7s - MAGIC KEY TO SPACING
+   
+use an if statement in main to add + or -, methods
+only return a boolean value
+
+if(isPrime(n))
+   result = "+"
+else
+   result = "-"
+   
+//PrintWriter REVIEW
+
+attach to a file
+
+PrintWriter outfile = new PrintWriter("results.txt")
+{
+   exactly the same use as System.out.
+   
+   outfile.print();
+   outfile.println();
+   outfile.printf();
+}
+outfile.close();
+   
+
+
+*/
